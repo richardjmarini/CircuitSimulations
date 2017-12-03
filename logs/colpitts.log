@@ -14,11 +14,11 @@ Initial Transient Solution
 Node                                   Voltage
 ----                                   -------
 n3                                           5
-n1                                    0.854735
-n0                                     0.82717
-n2                                     0.82717
-l1#branch                         -0.000275652
-v1#branch                           -0.0414527
+n1                                    0.762274
+n0                                     0.73537
+n2                                     0.73537
+l1#branch                         -2.69044e-05
+v1#branch                          -0.00423773
 
 
 No. of Data Rows : 108
@@ -28,10 +28,10 @@ CPU time since last call: 0.012 seconds.
 Total CPU time: 0.012 seconds.
 
 Total DRAM available = 5952.910156 MB.
-DRAM currently available = 367.593750 MB.
+DRAM currently available = 303.312500 MB.
 Total ngspice program size = 14.780273 MB.
-Resident set size = 1.881836 MB.
-Shared ngspice pages = 1.652344 MB.
+Resident set size = 1.878906 MB.
+Shared ngspice pages = 1.649414 MB.
 Text (code) pages = 1.333008 MB.
 Stack = 0 bytes.
 Library pages = 411.000 kB.

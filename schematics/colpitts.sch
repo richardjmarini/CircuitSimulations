@@ -9,7 +9,7 @@ refdes=C1
 T 48400 46500 5 10 0 0 270 0 1
 symversion=0.1
 T 48000 46000 5 10 1 1 0 0 1
-value=100uf
+value=59uf
 }
 C 47500 45800 1 270 0 capacitor-1.sym
 {
@@ -20,7 +20,7 @@ refdes=C2
 T 48400 45600 5 10 0 0 270 0 1
 symversion=0.1
 T 48000 45200 5 10 1 1 0 0 1
-value=100uf
+value=59uf
 }
 C 51600 46200 1 90 0 resistor-1.sym
 {
@@ -29,7 +29,7 @@ device=RESISTOR
 T 51900 46800 5 10 1 1 180 0 1
 refdes=R1
 T 51600 46400 5 10 1 1 0 0 1
-value=100
+value=1k
 }
 C 46200 46300 1 270 0 coil-1.sym
 {
@@ -40,7 +40,7 @@ refdes=L1
 T 46800 46100 5 10 0 0 270 0 1
 symversion=0.1
 T 46400 45800 5 10 1 1 0 0 1
-value=10mH
+value=470uh
 }
 C 49200 46500 1 0 0 npn-1.sym
 {
@@ -82,7 +82,7 @@ device=RESISTOR
 T 49900 48500 5 10 1 1 0 0 1
 refdes=R2
 T 49900 48200 5 10 1 1 0 0 1
-value=100
+value=1k
 }
 N 49700 47500 49700 47900 4
 C 49500 43500 1 0 0 ground.sym
