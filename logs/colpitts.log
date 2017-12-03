@@ -3,10 +3,10 @@ Circuit: * gnetlist -g spice-sdb -o netlists/colpitts.net schematics/colpitts.sc
 
 Doing analysis at TEMP = 25.000000 and TNOM = 27.000000
 
-No. of Data Columns : 6  
 
 No. of Data Rows : 1
-No. of Data Columns : 7  
+Doing analysis at TEMP = 25.000000 and TNOM = 27.000000
+
 
 Initial Transient Solution
 --------------------------
@@ -21,18 +21,20 @@ l1#branch                         -2.69044e-05
 v1#branch                          -0.00423773
 
 
-No. of Data Rows : 108
-.plot line ignored since rawfile was produced.
-CPU time since last call: 0.012 seconds.
+No. of Data Rows : 6408
+Doing analysis at TEMP = 25.000000 and TNOM = 27.000000
 
-Total CPU time: 0.012 seconds.
+OP information in rawfile.
+CPU time since last call: 0.200 seconds.
+
+Total CPU time: 0.200 seconds.
 
 Total DRAM available = 5952.910156 MB.
-DRAM currently available = 303.312500 MB.
-Total ngspice program size = 14.780273 MB.
-Resident set size = 1.878906 MB.
-Shared ngspice pages = 1.649414 MB.
+DRAM currently available = 418.691406 MB.
+Total ngspice program size = 14.919922 MB.
+Resident set size = 2.094727 MB.
+Shared ngspice pages = 1.744141 MB.
 Text (code) pages = 1.333008 MB.
 Stack = 0 bytes.
-Library pages = 411.000 kB.
+Library pages = 554.000 kB.
 
