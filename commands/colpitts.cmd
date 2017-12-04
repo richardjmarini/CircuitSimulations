@@ -1,6 +1,6 @@
 .control
 op
-tran 1ms 1s
-plot tran V(N1,N2)
+tran 22.6us 1s 
+hardcopy postscript/colpitts.ps V(n1,n2)
 wrdata vectors/colpitts v1#branch
 .endc
