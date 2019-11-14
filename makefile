@@ -23,3 +23,8 @@ colpitts:
 	$(GNETLIST) -o $(NETLISTS_DIR)/$@.net $(SCHEMATICS_DIR)/$@.sch
 	$(NGSPICE) $(NETLISTS_DIR)/$@.net -r $(RAW_DIR)/$@.raw | $(TEE) $(LOGS_DIR)/$@.log
 	$(VEC2WAV) $(VECTORS_DIR)/$@.data $(WAVE_DIR)/$@.wav
+
+hartley:
+	$(GNETLIST) -o $(NETLISTS_DIR)/$@.net $(SCHEMATICS_DIR)/$@.sch
+	$(NGSPICE) $(NETLISTS_DIR)/$@.net -r $(RAW_DIR)/$@.raw | $(TEE) $(LOGS_DIR)/$@.log
+	#$(VEC2WAV) $(VECTORS_DIR)/$@.data $(WAVE_DIR)/$@.wav
