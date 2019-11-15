@@ -15,7 +15,7 @@ TEE=tee
 VEC2WAV=$(UTILITIES_DIR)/vec2wav.py
 
 # targets
-TARGETS=colpitts
+TARGETS=colpitts hartley
 
 all: $(TARGETS)
 
