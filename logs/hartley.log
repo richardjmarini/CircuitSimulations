@@ -13,11 +13,10 @@ Initial Transient Solution
 
 Node                                   Voltage
 ----                                   -------
-n1                                           0
-unknown                                      0
 2                                            0
-4                                            5
-5                                          2.5
+n2                                           0
+n1                                           5
+4                                          2.5
 n0                                           5
 3                                   3.2233e-09
 1                                    0.0484298
@@ -25,11 +24,11 @@ l1#branch                          1.96518e-11
 l3#branch                                    0
 l2#branch                                    0
 v1#branch                           -0.0113636
-vo#branch                                    0
 
 
-No. of Data Rows : 59
-com_hardcopy: graph not defined
+No. of Data Rows : 2250
+
+The file "postscript/hartley.ps" may be printed on a postscript printer.
 Doing analysis at TEMP = 25.000000 and TNOM = 27.000000
 
 
@@ -38,11 +37,10 @@ Initial Transient Solution
 
 Node                                   Voltage
 ----                                   -------
-n1                                           0
-unknown                                      0
 2                                            0
-4                                            5
-5                                          2.5
+n2                                           0
+n1                                           5
+4                                          2.5
 n0                                           5
 3                                   3.2233e-09
 1                                    0.0484298
@@ -50,5 +48,4 @@ l1#branch                          1.96518e-11
 l3#branch                                    0
 l2#branch                                    0
 v1#branch                           -0.0113636
-vo#branch                                    0
 
