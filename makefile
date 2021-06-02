@@ -15,16 +15,21 @@ TEE=tee
 VEC2WAV=$(UTILITIES_DIR)/vec2wav.py
 
 # targets
-TARGETS=colpitts hartley
+TARGETS=colpitts hartley multivibrator
 
 all: $(TARGETS)
 
 colpitts:
 	$(GNETLIST) -o $(NETLISTS_DIR)/$@.net $(SCHEMATICS_DIR)/$@.sch
 	$(NGSPICE) $(NETLISTS_DIR)/$@.net -r $(RAW_DIR)/$@.raw | $(TEE) $(LOGS_DIR)/$@.log
-	$(VEC2WAV) $(VECTORS_DIR)/$@.data $(WAVE_DIR)/$@.wav
+	$(VEC2WAV) $(VECTORS_DIR)/$@.vec $(WAVE_DIR)/$@.wav
 
 hartley:
 	$(GNETLIST) -o $(NETLISTS_DIR)/$@.net $(SCHEMATICS_DIR)/$@.sch
 	$(NGSPICE) $(NETLISTS_DIR)/$@.net -r $(RAW_DIR)/$@.raw | $(TEE) $(LOGS_DIR)/$@.log
-	$(VEC2WAV) $(VECTORS_DIR)/$@.data $(WAVE_DIR)/$@.wav
+	$(VEC2WAV) $(VECTORS_DIR)/$@.vec $(WAVE_DIR)/$@.wav
+
+multivibrator:
+	$(GNETLIST) -o $(NETLISTS_DIR)/$@.net $(SCHEMATICS_DIR)/$@.sch
+	$(NGSPICE) $(NETLISTS_DIR)/$@.net -r $(RAW_DIR)/$@.raw | $(TEE) $(LOGS_DIR)/$@.log
+	$(VEC2WAV) $(VECTORS_DIR)/$@.vec $(WAVE_DIR)/$@.wav
