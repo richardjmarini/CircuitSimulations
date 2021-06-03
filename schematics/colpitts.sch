@@ -9,7 +9,7 @@ refdes=C1
 T 48400 46600 5 10 0 0 270 0 1
 symversion=0.1
 T 48000 46100 5 10 1 1 0 0 1
-value=59uf
+value=50uf
 }
 C 47500 45700 1 270 0 capacitor-1.sym
 {
@@ -20,7 +20,7 @@ refdes=C2
 T 48400 45500 5 10 0 0 270 0 1
 symversion=0.1
 T 48000 45100 5 10 1 1 0 0 1
-value=59uf
+value=50uf
 }
 C 46200 46300 1 270 0 coil-1.sym
 {
@@ -31,7 +31,7 @@ refdes=L1
 T 46800 46100 5 10 0 0 270 0 1
 symversion=0.1
 T 46400 45800 5 10 1 1 0 0 1
-value=470uh
+value=1mh
 }
 C 49200 46500 1 0 0 npn-1.sym
 {

@@ -128,7 +128,7 @@ refdes=C4
 T 47600 44800 5 10 0 0 0 0 1
 symversion=0.1
 T 48000 44200 5 10 1 1 0 0 1
-value=0.01uf
+value=0.1uf
 }
 C 46700 43200 1 0 0 coil-1.sym
 {
@@ -139,7 +139,7 @@ refdes=L2
 T 46900 43800 5 10 0 0 0 0 1
 symversion=0.1
 T 46800 42900 5 10 1 1 0 0 1
-value=12.6mh
+value=11mh
 }
 C 48100 43200 1 0 0 coil-1.sym
 {
@@ -150,7 +150,7 @@ refdes=L3
 T 48300 43800 5 10 0 0 0 0 1
 symversion=0.1
 T 48300 42900 5 10 1 1 0 0 1
-value=2.6mh
+value=11mh
 }
 C 48000 48200 1 90 0 coil-1.sym
 {
