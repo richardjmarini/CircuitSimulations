@@ -35,5 +35,5 @@ multivibrator:
 	$(VEC2WAV) $(VECTORS_DIR)/$@.vec $(WAVE_DIR)/$@.wav
 
 polivoks:
-	$(GNETLIST) -o $(NETLISTS_DIR)/$@.net $(SCHEMATICS_DIR)/$@.sch
+	$(GNETLIST) -o $(NETLISTS_DIR)/$@.net $(SCHEMATICS_DIR)/$@*.sch
 	$(NGSPICE) $(NETLISTS_DIR)/$@.net -r $(RAW_DIR)/$@.raw | $(TEE) $(LOGS_DIR)/$@.log

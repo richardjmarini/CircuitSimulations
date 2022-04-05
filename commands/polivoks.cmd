@@ -17,6 +17,6 @@ set color5=rgb:f/0/f
 set color6=rgb:5/5/5
 set color7=rgb:0/5/5
 
-hardcopy postscript/polivoks.ps v(gin1) v(TP1) v(TP4)
+hardcopy postscript/polivoks.ps v(gin1) v(TP1) v(TP4) v(TP3) v(TP5) v(TP6)
 
 .endc

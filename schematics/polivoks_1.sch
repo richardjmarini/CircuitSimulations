@@ -168,7 +168,7 @@ file=./models/1N4148.mod
 T 40400 50700 5 10 0 1 0 0 1
 device=model
 T 40400 50600 5 10 1 1 0 0 1
-refdes=A7
+refdes=A8
 T 41500 50300 5 10 1 1 0 0 1
 model-name=1N4148
 }
