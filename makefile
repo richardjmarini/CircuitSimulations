@@ -1,12 +1,15 @@
 
 #directory structure
-NETLISTS_DIR=netlists
+NET_DIR=netlists
 SCHEMATICS_DIR=schematics
 RAW_DIR=raw
-LOGS_DIR=logs
+LOG_DIR=logs
 UTILITIES_DIR=utilities
-WAVE_DIR=wav
-VECTORS_DIR=vectors
+WAV_DIR=wav
+VEC_DIR=vectors
+PS_DIR=postscript
+MKDIR=mkdir -p
+OUT_DIRS=$(RAW_DIR) $(LOG_DIR) $(WAV_DIR) $(NET_DIR) $(VEC_DIR) $(WAV_DIR) $(PS_DIR)
 
 # commands
 GNETLIST=gnetlist -g spice-sdb
@@ -15,25 +18,28 @@ TEE=tee
 VEC2WAV=$(UTILITIES_DIR)/vec2wav.py
 
 # targets
-TARGETS=colpitts hartley multivibrator polivoks
+TARGETS=setup colpitts hartley multivibrator polivoks
 
 all: $(TARGETS)
 
-colpitts:
-	$(GNETLIST) -o $(NETLISTS_DIR)/$@.net $(SCHEMATICS_DIR)/$@.sch
-	$(NGSPICE) $(NETLISTS_DIR)/$@.net -r $(RAW_DIR)/$@.raw | $(TEE) $(LOGS_DIR)/$@.log
-	$(VEC2WAV) $(VECTORS_DIR)/$@.vec $(WAVE_DIR)/$@.wav
+setup:
+	$(foreach dir, $(OUT_DIRS), mkdir -p $(dir);)
 
-hartley:
-	$(GNETLIST) -o $(NETLISTS_DIR)/$@.net $(SCHEMATICS_DIR)/$@.sch
-	$(NGSPICE) $(NETLISTS_DIR)/$@.net -r $(RAW_DIR)/$@.raw | $(TEE) $(LOGS_DIR)/$@.log
-	$(VEC2WAV) $(VECTORS_DIR)/$@.vec $(WAVE_DIR)/$@.wav
+colpitts: setup
+	$(GNETLIST) -o $(NET_DIR)/$@.net $(SCHEMATICS_DIR)/$@.sch
+	$(NGSPICE) $(NET_DIR)/$@.net -r $(RAW_DIR)/$@.raw | $(TEE) $(LOG_DIR)/$@.log
+	$(VEC2WAV) $(VEC_DIR)/$@.vec $(WAV_DIR)/$@.wav
 
-multivibrator:
-	$(GNETLIST) -o $(NETLISTS_DIR)/$@.net $(SCHEMATICS_DIR)/$@.sch
-	$(NGSPICE) $(NETLISTS_DIR)/$@.net -r $(RAW_DIR)/$@.raw | $(TEE) $(LOGS_DIR)/$@.log
-	$(VEC2WAV) $(VECTORS_DIR)/$@.vec $(WAVE_DIR)/$@.wav
+hartley: setup
+	$(GNETLIST) -o $(NET_DIR)/$@.net $(SCHEMATICS_DIR)/$@.sch
+	$(NGSPICE) $(NET_DIR)/$@.net -r $(RAW_DIR)/$@.raw | $(TEE) $(LOG_DIR)/$@.log
+	$(VEC2WAV) $(VEC_DIR)/$@.vec $(WAV_DIR)/$@.wav
 
-polivoks:
-	$(GNETLIST) -o $(NETLISTS_DIR)/$@.net $(SCHEMATICS_DIR)/$@*.sch
-	$(NGSPICE) $(NETLISTS_DIR)/$@.net -r $(RAW_DIR)/$@.raw | $(TEE) $(LOGS_DIR)/$@.log
+multivibrator: setup
+	$(GNETLIST) -o $(NET_DIR)/$@.net $(SCHEMATICS_DIR)/$@.sch
+	$(NGSPICE) $(NET_DIR)/$@.net -r $(RAW_DIR)/$@.raw | $(TEE) $(LOG_DIR)/$@.log
+	$(VEC2WAV) $(VEC_DIR)/$@.vec $(WAV_DIR)/$@.wav
+
+polivoks: setup
+	$(GNETLIST) -o $(NET_DIR)/$@.net $(SCHEMATICS_DIR)/$@*.sch
+	$(NGSPICE) $(NET_DIR)/$@.net -r $(RAW_DIR)/$@.raw | $(TEE) $(LOG_DIR)/$@.log
