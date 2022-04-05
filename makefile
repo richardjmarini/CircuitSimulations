@@ -15,7 +15,7 @@ TEE=tee
 VEC2WAV=$(UTILITIES_DIR)/vec2wav.py
 
 # targets
-TARGETS=colpitts hartley multivibrator
+TARGETS=colpitts hartley multivibrator polivoks
 
 all: $(TARGETS)
 
@@ -33,3 +33,7 @@ multivibrator:
 	$(GNETLIST) -o $(NETLISTS_DIR)/$@.net $(SCHEMATICS_DIR)/$@.sch
 	$(NGSPICE) $(NETLISTS_DIR)/$@.net -r $(RAW_DIR)/$@.raw | $(TEE) $(LOGS_DIR)/$@.log
 	$(VEC2WAV) $(VECTORS_DIR)/$@.vec $(WAVE_DIR)/$@.wav
+
+polivoks:
+	$(GNETLIST) -o $(NETLISTS_DIR)/$@.net $(SCHEMATICS_DIR)/$@.sch
+	$(NGSPICE) $(NETLISTS_DIR)/$@.net -r $(RAW_DIR)/$@.raw | $(TEE) $(LOGS_DIR)/$@.log
