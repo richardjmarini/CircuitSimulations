@@ -8,7 +8,8 @@ UTILITIES_DIR=utilities
 WAV_DIR=wav
 VEC_DIR=vectors
 PS_DIR=postscript
-MKDIR=mkdir -p
+MK_DIR=mkdir -p
+RM_DIR=rm -fr
 OUT_DIRS=$(RAW_DIR) $(LOG_DIR) $(WAV_DIR) $(NET_DIR) $(VEC_DIR) $(WAV_DIR) $(PS_DIR)
 
 # commands
@@ -22,8 +23,11 @@ TARGETS=setup colpitts hartley multivibrator polivoks
 
 all: $(TARGETS)
 
+clean:
+	$(foreach dir, $(OUT_DIRS), $(RM_DIR) $(dir);)
+
 setup:
-	$(foreach dir, $(OUT_DIRS), mkdir -p $(dir);)
+	$(foreach dir, $(OUT_DIRS), $(MK_DIR) $(dir);)
 
 colpitts: setup
 	$(GNETLIST) -o $(NET_DIR)/$@.net $(SCHEMATICS_DIR)/$@.sch
